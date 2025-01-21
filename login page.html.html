@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: rgb(13, 252, 252);
+            background-image: url('login img.jpeg'); 
+            background-position: center;
+        }
+        
+        .login-container {
+            background: rgba(0, 0, 0, 0.8); 
+            padding: 20px 30px;
+            border-radius: 8px;
+            width: 300px;
+        }
+        
+        .login-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #910404;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 7px;
+            font-size: 18px;
+            color: #c20a0a;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+        }
+        
+        .login-button {
+            width: 100%;
+            padding: 10px;
+            background-color: #0004ff;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.2s; 
+        }
+        
+        .login-button:hover {
+            background-color: #0206ff;
+            transform: scale(1.1); 
+        }
+
+        .forgot-password {
+            text-align: center;
+            margin-top: 10px;
+        }
+        
+        .forgot-password a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit" class="login-button" id="loginButton">Login</button>
+        </form>
+        <div class="forgot-password">
+            <a href="#">Forgot Password?</a>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            if (email && password) {
+                alert('Login Successful!');
+            } else {
+                alert('Please fill in all fields.');
+            }
+        });
+
+        const loginButton = document.getElementById('loginButton');
+
+        loginButton.addEventListener('dblclick', function() {
+            loginButton.style.backgroundColor = '#ff0000';
+        });
+
+        loginButton.addEventListener('mouseover', function() {
+            loginButton.style.backgroundColor = '#b04b9b';
+        });
+
+        loginButton.addEventListener('mouseout', function() {
+            loginButton.style.backgroundColor = '#0004ff';
+        });
+    </script>
+</body>
+</html>
